@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 第三步3、使用组件   -->
+        <my-cpn></my-cpn>
+        <my-cpn></my-cpn>
+        <my-cpn></my-cpn>
+
+        <div>
+            <my-cpn></my-cpn>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        // 第一步1、创建组件构造器对象
+        const cpnC = Vue.extend({
+            template: `  //template 模板
+            <div>
+                <h2>我是标题</h2>
+                <p>我是内容，哈哈哈哈</p>
+                <p>我是内容，黑黑恶黑</p>
+            </div>
+            `
+        })
+
+        //第二步2、注册组件（全局组件）   第一个参数是 起的标签名  第二个参数 1中的cpnC
+        Vue.component('my-cpn', cpnC)
+
+        const app = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

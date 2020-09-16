@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+        <cpn1></cpn1>
+        <cpn1></cpn1>
+    </div>
+
+    <!-- 1、第一种写法  类型必须是text/x-template -->
+    <!-- <script type="text/x-template" id="cpn">
+        <div>
+            <h2>我是标题1</h2>
+            <p>我是内容1，呵呵呵</p>
+        </div>
+    </script> -->
+
+
+    <!-- 2、第二种写法 -->
+    <template id="cpn">
+        <div>
+            <h2>我是标题1</h2>
+            <p>我是内容1，呵呵呵</p>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 现在注册的  全局组件注册的语法糖 cpn1
+        Vue.component('cpn1', {
+            template: '#cpn'
+        })
+
+        const app = new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+
+</html>
